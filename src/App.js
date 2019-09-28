@@ -1,26 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Details from './components/details';
 import './App.css';
+import fetchJsonp from 'fetch-jsonp';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    ip: '',
+    data: {}
+  };
+
+  componentDidMount() {
+    fetchJsonp('https://api.ipify.org?format=jsonp')
+      .then(res => res.json())
+      .then(data => this.showIp(data))
+      .catch(err => console.log(err));
+  }
+
+  showIp({ ip }) {
+    fetch(`https://api.ipdata.co/${ip}?api-key=${key}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ data, ip });
+      })
+      .catch(err => console.log(err));
+  }
+
+  render() {
+    return (
+      <div className='overflow-hidden'>
+        <div className='row mt-3'>
+          <div className='col-sm-12 col-md-8 col-xl-6 mx-auto'>
+            <center className='mt-5'>
+              <h1
+                className='mb-5'
+                style={{
+                  color: `rgb(230, 241, 255)`,
+                  boxShadow: `rgba(2, 12, 27, 0.9) 0px 10px 30px -15px`
+                }}
+              >
+                What's my IP Address?
+              </h1>
+              <div>
+                <h2
+                  className='ip pt-4 pb-4'
+                  style={{
+                    background: `rgb(41,61,90)`,
+                    borderRadius: `2px`,
+                    color: `#fff`
+                  }}
+                >
+                  {this.state.ip ? `👉 ${this.state.ip}` : '-'}
+                </h2>
+              </div>
+            </center>
+            {Object.keys(this.state.data).length !== 0 && (
+              <Details data={this.state.data} />
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
