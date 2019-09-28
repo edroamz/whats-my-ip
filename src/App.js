@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Details from './components/details';
 import './App.css';
+import Github from './github-link.png';
 import fetchJsonp from 'fetch-jsonp';
 
 class App extends Component {
@@ -30,6 +31,20 @@ class App extends Component {
   render() {
     return (
       <div className='overflow-hidden'>
+        <a
+          href='https://github.com/edroamz/whats-my-ip'
+          rel='noreferrer noopener nofollow'
+          aria-label='Github repository'
+          target='_blank'
+          style={{
+            position: `absolute`,
+            top: `0`,
+            right: `0`
+          }}
+        >
+          <img src={Github} alt='Github repo' />
+        </a>
+
         <div className='row mt-3'>
           <div className='col-sm-12 col-md-8 col-xl-6 mx-auto'>
             <center className='mt-5'>
