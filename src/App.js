@@ -17,7 +17,9 @@ class App extends Component {
   }
 
   showIp({ ip }) {
-    fetch(`https://api.ipdata.co/${ip}?api-key=${process.env.API_KEY}`)
+    fetch(
+      `https://api.ipdata.co/${ip}?api-key=${process.env.REACT_APP_API_KEY}`
+    )
       .then(res => res.json())
       .then(data => {
         this.setState({ data, ip });
