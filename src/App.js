@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Details from './components/details';
 import './App.css';
-import Github from './github-link.png';
+import Github from './github-link.svg';
 import fetchJsonp from 'fetch-jsonp';
 
 class App extends Component {
