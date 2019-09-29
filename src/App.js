@@ -39,10 +39,17 @@ class App extends Component {
           style={{
             position: `absolute`,
             top: `0`,
-            right: `0`
+            right: `0`,
+            zIndex: `1000`
           }}
         >
-          <img src={Github} alt='Github repo' />
+          <img
+            src={Github}
+            alt='Github repo'
+            style={{
+              margin: `0`
+            }}
+          />
         </a>
 
         <div className='row mt-3'>
