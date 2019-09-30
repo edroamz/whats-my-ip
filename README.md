@@ -16,7 +16,7 @@ Site that provides your IP and location-related data
 REACT_APP_API_KEY=hereGoesYourKey
 ```
 
-\*Note: Don't forget to add the path of the environment variable to the .gitignore file
+\*Note: Don't forget to create a rule for the environment variable in the .gitignore file
 
 ### Installing
 
