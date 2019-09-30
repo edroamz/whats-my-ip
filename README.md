@@ -10,11 +10,13 @@ Site that provides your IP and location-related data
 
 1. First, You'll need an API Key in order to get data from ipdata. Get yours [here](https://ipdata.co/). It's FREE!
 
-1. Then, create an environment variable named '.env.development' in the root of the project. Inside that file, declare a variable called REACT_APP_API_KEY and provide your key as follows:
+1. \*Then, create an environment variable named '.env.development' in the root of the project. Inside that file, declare a variable called REACT_APP_API_KEY and provide your key as follows:
 
 ```
 REACT_APP_API_KEY=hereGoesYourKey
 ```
+
+\*Note: Don't forget to add the path of the environment variable to the .gitignore file
 
 ### Installing
 
