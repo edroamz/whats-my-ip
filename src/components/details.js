@@ -16,10 +16,12 @@ function formatData(data) {
   if (arrAsn.length) {
     arrAsn = AddTitle(arrAsn, 'Asn');
   }
+  if (languages) {
+    languages.forEach((item, index) => {
+      arrLang.push(CreateList(languages[index]));
+    });
+  }
 
-  languages.forEach((item, index) => {
-    arrLang.push(CreateList(languages[index]));
-  });
   if (arrLang.length) {
     arrLang = AddTitle(arrLang, 'Languages');
   }

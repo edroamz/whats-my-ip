@@ -32,6 +32,7 @@ class App extends Component {
     return (
       <div className='overflow-hidden'>
         <a
+          className='githubLink'
           href='https://github.com/edroamz/whats-my-ip'
           rel='noreferrer noopener nofollow'
           aria-label='Github repository'
